@@ -1,0 +1,14 @@
+<footer class="site-footer">
+  <nav class="main-nav" id="menu">
+    <ol>
+      {% assign currentpage = page.url %}
+      {% for page in site.pages %}
+        {% unless page.url contains ".css" %}
+          <li>
+            <a href="{{ site.baseurl }}{{ page.url }}" {% if currentpage == page.url %}class = "active"{% endif %}>{{ page.title }}</a>
+          </li>
+        {% endunless %}
+      {% endfor %}
+    </ol>
+  </nav>
+</footer>

@@ -1,0 +1,8 @@
+# Site settings
+title: <%= codex_title %>
+
+# Build settings
+markdown: kramdown
+
+gems:
+  - jemoji
