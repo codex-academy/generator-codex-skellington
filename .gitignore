@@ -2,3 +2,13 @@ _site
 .sass-cache
 .jekyll-metadata
 node_modules/
+LICENSE
+_config.yml
+_includes/footer.html
+_includes/head.html
+_includes/header.html
+_layouts/default.html
+_layouts/single.html
+_posts/2016-06-01-starter.md
+index.md
+CNAME
