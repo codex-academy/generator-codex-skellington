@@ -22,6 +22,11 @@ var CodexSkellingtonGenerator = yeoman.generators.Base.extend({
       type    : 'input',
       name    : 'codexTitle',
       message : 'The title of the module'
+    },
+    {
+      type    : 'input',
+      name    : 'codexNiceUrl',
+      message : 'The URL for the CNAME file. The ".projectcodex.co" at the end will be added for you.'
     }];
 
     this.prompt(prompts, function (props) {
@@ -53,8 +58,13 @@ var CodexSkellingtonGenerator = yeoman.generators.Base.extend({
         codex_title: this.codexTitle,
       };
 
-    this.template("__config.yml", "_config.yml", configYmlContext);
-      //this.src.copy('__config.yml', '_config.yml');
+      var CnameContext = {
+        codex_nice_url: this.codexNiceUrl,
+      };
+
+      this.template("_config.yml", "_config.yml", configYmlContext);
+      this.template("CNAME", "CNAME", CnameContext);
+
     },
 
     projectfiles: function () {
