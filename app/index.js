@@ -31,6 +31,7 @@ var CodexSkellingtonGenerator = yeoman.generators.Base.extend({
 
     this.prompt(prompts, function (props) {
       this.codexTitle = props.codexTitle;
+      this.codexNiceUrl = props.codexNiceUrl;
       done();
     }.bind(this));
   },
